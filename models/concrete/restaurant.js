@@ -13,4 +13,7 @@ const restaurantSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: ''
     }
-})
+},{timestamps: true});
+
+const restaurant = mongoose.model('restaurant', restaurantSchema);
+module.exports = restaurant
