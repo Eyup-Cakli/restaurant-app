@@ -6,6 +6,7 @@ const authRoutes = require("./routes/authRoutes.js");
 const { requireAuth, checkUser } = require("./middlewares/authMiddleware.js");
 const userRoutes = require("./routes/userRoutes.js");
 const companyRoutes = require("./routes/companyRoutes.js");
+const menuRoutes = require("./routes/menuRoutes.js");
 
 const app = express();
 const port = 3000;
@@ -25,6 +26,7 @@ app.get('*', checkUser);
 app.use(authRoutes);
 app.use(userRoutes);
 app.use(companyRoutes);
+app.use(menuRoutes);
 
 app.listen(port, () => {
     console.log(`listening on ${port}`)

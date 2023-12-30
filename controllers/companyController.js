@@ -161,7 +161,7 @@ const getAllCompany_get = async (req, res) => {
     }
   }
 
-  // get logo by id
+  // get image by id
 const getImageById_get = async (req, res) => {
     try {
       const companyId = req.params.id;
