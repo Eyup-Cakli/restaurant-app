@@ -52,12 +52,12 @@ const createToken = (id) => {
 };
 
 // register page
-export const signup_get = (req, res) => {
+const signup_get = (req, res) => {
   res.send("sign up page");
 };
 
 // login page
-export const login_get = (req, res) => {
+const login_get = (req, res) => {
   res.send("login page");
 };
 
