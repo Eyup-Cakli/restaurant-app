@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const validator = require("validator");
+const bcrypt = require("bcrypt");
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -13,11 +15,9 @@ const userSchema = new mongoose.Schema({
         unique: [ true, "The email address you entered is used by another user. Please use a different email address." ],
         lowercase: true,
         validate: {
-            validagtor: function (value) {
-                return Joi.string().email().validate(value).error === undefined;
-            },
-            message: 'please enter a valid email.'
-        }
+            validator: validator.isEmail,
+            message: "please enter a valid email.",
+        },
     },
     password: {
         type: String,

@@ -5,7 +5,7 @@ const dbURI = "mongodb+srv://eyupcakli98:atlas123@restaurant-app.m2hycjs.mongodb
 const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true,
+    useCreateIndex: true
   };
 
   module.exports.connectMongoDB = () => {

@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-const { connectMongoDb } = require("./config/connectMongoDB.js");
+const { connectMongoDB } = require("./config/connectMongoDB.js");
 const authRoutes = require("./routes/authRoutes.js");
 const { requireAuth, checkUser } = require("./middlewares/authMiddleware.js");
 
