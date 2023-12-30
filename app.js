@@ -7,6 +7,10 @@ const { requireAuth, checkUser } = require("./middlewares/authMiddleware.js");
 const userRoutes = require("./routes/userRoutes.js");
 const companyRoutes = require("./routes/companyRoutes.js");
 const menuRoutes = require("./routes/menuRoutes.js");
+const commentRoutes = require("./routes/commentRoutes.js");
+const addressRoutes = require("./routes/addressRoutes.js");
+const orderRoutes = require("./routes/orderRoutes.js");
+const restaurantRoutes = require("./routes/restaurantRoutes.js")
 
 const app = express();
 const port = 3000;
@@ -27,6 +31,10 @@ app.use(authRoutes);
 app.use(userRoutes);
 app.use(companyRoutes);
 app.use(menuRoutes);
+app.use(commentRoutes);
+app.use(addressRoutes);
+app.use(orderRoutes);
+app.use(restaurantRoutes);
 
 app.listen(port, () => {
     console.log(`listening on ${port}`)
