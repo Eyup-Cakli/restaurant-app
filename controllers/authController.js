@@ -1,9 +1,6 @@
 const jwt = require("jsonwebtoken");
 const fs = require("fs");
-const path = require("path");
-const multer = require("multer");
 const user = require("../models/concrete/user.js");
-const { upload, uploadsDir } = require("../lib/upload.js");
 
 const privateKey = fs.readFileSync("./certs/private.pem");
 const publicKey = fs.readFileSync("./certs/public.pem");
@@ -64,31 +61,15 @@ const login_get = (req, res) => {
 // register operation
 const signup_post = async (req, res) => {
   try {
-    await upload(req, res, async function (err) {
-      if (err instanceof multer.MulterError) {
-        return res
-          .status(400)
-          .json({ error: "Multer error occurred while uploading the image." });
-      } else if (err) {
-        return res
-          .status(500)
-          .json({ error: "Error occurred while uploading the picture." });
-      }
 
       const email = req.body.email;
       const password = req.body.password;
       const name = req.body.name;
 
-      let image = "";
-      if (req.savedImages && req.savedImages.length > 0) {
-        image = path.join(uploadsDir, req.savedImages.join(","));
-      }
-
       const newUser = new user({
         email: email,
         password: password,
-        name: userName,
-        image: image,
+        name: name
       });
 
       try {
@@ -107,7 +88,6 @@ const signup_post = async (req, res) => {
             .json({ error: "An error occurred while creating the user." });
         }
       }
-    });
   } catch (err) {
     return res.status(500).json({ error: "An error occurred." });
   }

@@ -13,6 +13,10 @@ const addressSchema = new mongoose.Schema({
         type: String,
         maxlength: 500,
         required: [ true, 'Please fill in the plain address field.' ]
+    },
+    isDeleted: {
+        type: Boolean,
+        default: false
     }
 },{timestamps: true});
 

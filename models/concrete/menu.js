@@ -18,7 +18,11 @@ const menuSchema = new mongoose.Schema({
             type:String,
             default: ''
         }
-    }]
+    }],
+    isDeleted: {
+        type: Boolean,
+        default: false
+    }
 },{timestamps: true});
 
 const menu = mongoose.model('menu', menuSchema);

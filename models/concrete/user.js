@@ -31,6 +31,10 @@ const userSchema = new mongoose.Schema({
     addressId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'address'
+    },
+    isDeleted: {
+        type: Boolean,
+        default: false
     }
 },{timestamps: true});
 

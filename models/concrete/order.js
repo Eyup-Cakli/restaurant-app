@@ -15,6 +15,10 @@ const orderSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: [ true, "Comment Id required."],
         ref: "comment"
+    },
+    isDeleted: {
+        type: Boolean,
+        default: false
     }
 },{timestamps: true});
 
