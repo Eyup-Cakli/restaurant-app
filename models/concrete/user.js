@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema({
         minlength: [ 6, 'Minumum password length  is 6 characters' ]
     },
     birthDate: {
-        type: Date(dd/mm/YY),
+        type: Date,
         required: [ true, "Please choose a date of birth." ] 
     },
     addressId: {
