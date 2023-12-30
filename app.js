@@ -4,6 +4,8 @@ const cookieParser = require("cookie-parser");
 const { connectMongoDB } = require("./config/connectMongoDB.js");
 const authRoutes = require("./routes/authRoutes.js");
 const { requireAuth, checkUser } = require("./middlewares/authMiddleware.js");
+const userRoutes = require("./routes/userRoutes.js");
+const companyRoutes = require("./routes/companyRoutes.js");
 
 const app = express();
 const port = 3000;
@@ -21,6 +23,8 @@ connectMongoDB();
 // routes
 app.get('*', checkUser);
 app.use(authRoutes);
+app.use(userRoutes);
+app.use(companyRoutes);
 
 app.listen(port, () => {
     console.log(`listening on ${port}`)

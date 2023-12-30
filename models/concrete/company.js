@@ -1,6 +1,6 @@
-const { mongoose } = require("mongoose");
+const mongoose = require("mongoose");
 
-const companySchema = new mongoos.Schema({
+const companySchema = new mongoose.Schema({
     name: {
         type: String,
         require: [ true, 'Company name should be declared.'],

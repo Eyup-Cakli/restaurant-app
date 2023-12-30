@@ -26,11 +26,14 @@ const userSchema = new mongoose.Schema({
     },
     birthDate: {
         type: Date,
-        required: [ true, "Please choose a date of birth." ] 
     },
     addressId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'address'
+    },
+    gender: {
+        type: String,
+        default: ''
     },
     isDeleted: {
         type: Boolean,

@@ -48,28 +48,18 @@ const createToken = (id) => {
   });
 };
 
-// register page
-const signup_get = (req, res) => {
-  res.send("sign up page");
-};
-
-// login page
-const login_get = (req, res) => {
-  res.send("login page");
-};
-
 // register operation
 const signup_post = async (req, res) => {
   try {
 
       const email = req.body.email;
       const password = req.body.password;
-      const name = req.body.name;
+      const username = req.body.username;
 
       const newUser = new user({
         email: email,
         password: password,
-        name: name
+        username: username
       });
 
       try {
@@ -133,4 +123,4 @@ const logout_get = async (req, res) => {
   }
 };
 
-module.exports = { signup_get, login_get, signup_post, login_post, logout_get };
+module.exports = { signup_post, login_post, logout_get };

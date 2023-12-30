@@ -7,7 +7,7 @@ const updateUser_put = async (req, res) => {
     const userIdToBeUpdated = req.params.id;
     const newEmail = req.body.email;
     const newPassword = req.body.password;
-    const newName = req.body.name;
+    const newUsername = req.body.username;
 
     const existingUser = await user.findById(userIdToBeUpdated);
     const checkUserEmailExist = await user.find({ email: newEmail });
@@ -32,7 +32,7 @@ const updateUser_put = async (req, res) => {
 
     existingUser.email = newEmail;
     existingUser.password = newPassword;
-    existingUser.name = newName;
+    existingUser.username = newUsername;
 
     try {
       const savedUser = await existingUser.save();
