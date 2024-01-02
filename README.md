@@ -1,10 +1,8 @@
 # restaurant-app
 
-Case study for Voco company.
+Case study
 
 //EN//
-
-Case study for Voco company.
 
 General Information 
 Imagine that you are building a restaurant. The system includes a list of restaurants and restaurant information 
@@ -58,8 +56,6 @@ sort by what is lower than what is.
 
 
 //TR//
-
-Voco şirketi için işe alım vaka çalışması.
 
 Genel Bilgi 
 
